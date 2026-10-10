@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#dff4ff">
+<title>Hòm thư góp ý nội bộ</title>
+<style>
+:root{--sky:#dff4ff;--sky2:#effaff;--blue:#3b9ed8;--blue2:#237bb4;--navy:#24516b;--mint:#d9f8e8;--yellow:#fff3c4;--pink:#ffe3e9;--white:#fff;--line:#d6eaf4;--shadow:0 12px 32px rgba(47,125,164,.12)}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(180deg,#dff4ff 0,#f4fbff 44%,#f8fdff 100%);color:#29495c;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.wrap{max-width:1100px;margin:auto;padding:20px 16px 40px}.hero{text-align:center;padding:24px 14px 18px}.bubble{display:inline-flex;align-items:center;justify-content:center;width:66px;height:66px;border-radius:22px;background:white;box-shadow:var(--shadow);font-size:34px;margin-bottom:8px}.hero h1{font-size:clamp(25px,4vw,38px);margin:0;color:#237bb4;letter-spacing:-.5px}.hero p{margin:9px auto 0;max-width:600px;color:#5c7f91}.tabs{display:flex;gap:10px;justify-content:center;margin:14px 0 22px}.tab{padding:12px 20px;border-radius:14px;background:#fff;color:#3e728d;font-weight:750;box-shadow:0 4px 14px #2f7da414}.tab.active{background:var(--blue);color:white}.panel{background:rgba(255,255,255,.94);border:1px solid #fff;border-radius:24px;padding:clamp(17px,3vw,30px);box-shadow:var(--shadow);margin:0 auto 18px}.form-panel{max-width:760px}.intro{background:linear-gradient(120deg,#e7f7ff,#e5fff2);border:1px solid #d5f0f5;border-radius:18px;padding:18px;margin-bottom:22px;text-align:center}.intro h2{font-size:clamp(20px,3vw,26px);color:#237bb4;margin:0 0 7px}.intro p{margin:0;color:#5a7c8e}.field{margin:17px 0}.field label{display:block;font-weight:750;margin-bottom:8px;color:#315c73}.required{color:#ed7189}.field input,.field select,.field textarea,.filters select,.filters input,.loginbox input{width:100%;border:1.5px solid #d5e9f3;border-radius:13px;padding:12px 13px;background:#fbfeff;color:#29495c;outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,.filters select:focus,.filters input:focus{border-color:#6bbce7;box-shadow:0 0 0 3px #dff4ff}.field textarea{resize:vertical;min-height:125px}.hint{font-size:12px;color:#7894a3;margin-top:6px}.primary{background:linear-gradient(120deg,#3b9ed8,#4cb8ce);color:white;font-weight:800;padding:13px 20px;border-radius:13px;box-shadow:0 7px 16px #3b9ed833}.primary:hover{filter:brightness(.97);transform:translateY(-1px)}.submitrow{text-align:center;margin-top:22px}.submitrow button{min-width:min(100%,250px)}.success{display:none;text-align:center;padding:36px 18px}.success .emoji{font-size:54px}.success h2{color:#248c66}.success p{line-height:1.65}.secondary{background:#edf8ff;color:#2879a7;padding:10px 14px;border-radius:11px;font-weight:700}.admin-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}.admin-head h2{margin:0;color:#237bb4}.subtle{font-size:13px;color:#7691a0}.loginbox{max-width:440px;margin:18px auto;text-align:center;padding:20px}.loginbox h3{margin:0 0 8px;color:#237bb4}.loginbox input{margin:12px 0}.loginbox .primary{width:100%}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}.stat{border-radius:17px;padding:16px;background:#f0faff;border:1px solid #e0f1f8}.stat:nth-child(2){background:#effcf5}.stat:nth-child(3){background:#fff9e6}.stat:nth-child(4){background:#fff1f4}.stat .label{font-size:12px;color:#648394;font-weight:700}.stat .num{font-size:28px;font-weight:850;color:#2d7fac;margin-top:4px}.filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:end;margin:18px 0}.filters label{display:block;font-size:12px;font-weight:750;margin-bottom:6px;color:#557889}.filters .wide{grid-column:span 2}.actions{display:flex;gap:8px;flex-wrap:wrap}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:15px}table{width:100%;border-collapse:collapse;min-width:850px;background:#fff}th,td{text-align:left;padding:12px;border-bottom:1px solid #e7f1f6;vertical-align:top;font-size:13px}th{background:#eef9ff;color:#3d718a;font-size:12px;position:sticky;top:0}tr:last-child td{border-bottom:0}.content-cell{max-width:250px;white-space:pre-wrap;overflow-wrap:anywhere}.pill{display:inline-block;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;background:#edf5fa;color:#577789}.pill.done{background:#dff8e9;color:#287d56}.pill.received{background:#fff3c8;color:#88651b}.pill.positive{background:#dff8e9;color:#287d56}.pill.neutral{background:#eaf3ff;color:#3d70a4}.pill.negative{background:#ffe3e8;color:#b14b62}.table-actions{display:flex;gap:6px;flex-wrap:wrap}.smallbtn{padding:7px 9px;border-radius:8px;font-size:11px;font-weight:800;background:#eaf7ff;color:#2878a2}.smallbtn.green{background:#e2f9eb;color:#287d56}.smallbtn.red{background:#fff0f2;color:#b14b62}.empty{text-align:center;padding:34px;color:#7995a3}.yearsummary{margin:18px 0 0;padding:16px;border-radius:16px;background:#f3fbff;border:1px solid #dceff7}.yearsummary h3{margin:0 0 12px;color:#347c9f}.monthgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.monthbox{background:#fff;border:1px solid #e2f0f6;border-radius:11px;padding:10px}.monthbox strong{display:block;font-size:12px;color:#5b7f91}.monthbox span{font-size:18px;font-weight:850;color:#277ca7}.monthbox small{display:block;font-size:11px;color:#7290a0}.footer{text-align:center;color:#7795a5;font-size:12px;padding:18px 8px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#24516b;color:#fff;padding:12px 18px;border-radius:13px;box-shadow:var(--shadow);z-index:10;display:none;max-width:90vw}.security-note{background:#fff8df;border:1px solid #f5e7ae;border-radius:12px;padding:12px;font-size:12px;line-height:1.5;color:#78682d;margin-top:14px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.filters{grid-template-columns:repeat(2,minmax(0,1fr))}.filters .wide{grid-column:span 2}.monthgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.panel{border-radius:19px}.admin-head{align-items:flex-start}}
+@media(max-width:420px){.wrap{padding:12px 10px 28px}.tabs{gap:7px}.tab{padding:11px 13px;flex:1}.stats{gap:8px}.stat{padding:12px}.stat .num{font-size:24px}.filters{gap:8px}.monthgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="bubble">💌</div>
+  <h1>Hòm thư góp ý</h1>
+  <p>Cùng lắng nghe, cùng cải thiện — mỗi ý kiến đều góp phần làm công ty tốt hơn 🌱</p>
+</header>
+<nav class="tabs" aria-label="Chọn chức năng">
+  <button class="tab active" id="tabFeedback" onclick="showTab('feedback')">💬 Gửi góp ý</button>
+  <button class="tab" id="tabAdmin" onclick="showTab('admin')">🔐 Quản lý</button>
+</nav>
+
+<section id="feedbackSection" class="panel form-panel">
+  <div id="feedbackFormWrap">
+    <div class="intro">
+      <h2>Đây là góp ý ẩn danh, các bạn cứ thẳng thắn nhé.</h2>
+      <p>Chia sẻ chân thành để cùng xây dựng môi trường làm việc tốt hơn nha! 💙</p>
+    </div>
+    <form id="feedbackForm">
+      <div class="field">
+        <label for="area">Lĩnh vực góp ý <span class="required">*</span></label>
+        <select id="area" required>
+          <option value="">— Chọn lĩnh vực —</option>
+          <option>Môi trường & văn hóa làm việc</option>
+          <option>Quản lý & lãnh đạo</option>
+          <option>Chính sách & chế độ</option>
+          <option>Quy trình & công cụ làm việc</option>
+          <option>Phối hợp giữa các phòng ban</option>
+          <option>Cơ sở vật chất</option>
+          <option>Ghi nhận & khen thưởng</option>
+          <option>Ý tưởng cải tiến</option>
+          <option>Khác</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="content">Nội dung góp ý <span class="required">*</span></label>
+        <textarea id="content" required maxlength="5000" placeholder="Bạn muốn chia sẻ điều gì? Hãy cứ nói thật lòng nhé..." ></textarea>
+      </div>
+      <div class="field">
+        <label for="solution">Đề xuất giải pháp <span class="subtle">(không bắt buộc)</span></label>
+        <textarea id="solution" maxlength="3000" style="min-height:95px" placeholder="Theo bạn, công ty có thể cải thiện bằng cách nào?"></textarea>
+      </div>
+      <div class="submitrow"><button class="primary" type="submit">📨 Gửi góp ý</button></div>
+      <p class="hint" style="text-align:center">Biểu mẫu không yêu cầu họ tên hoặc thông tin cá nhân.</p>
+    </form>
+  </div>
+  <div class="success" id="successBox">
+    <div class="emoji">🌷💙</div>
+    <h2>Cảm ơn bạn đã góp ý kiến cho công ty tốt hơn nhé.</h2>
+    <p>Ý kiến của bạn đã được ghi nhận. Cảm ơn bạn đã cùng xây dựng môi trường làm việc tích cực hơn!</p>
+    <button class="primary" onclick="resetFeedback()">Gửi thêm góp ý</button>
+  </div>
+</section>
+
+<section id="adminSection" class="panel" style="display:none">
+  <div id="loginView" class="loginbox">
+    <div style="font-size:42px">🔐</div>
+    <h3 id="loginTitle">Khu vực quản lý</h3>
+    <p class="subtle" id="loginDesc">Đăng nhập để xem và xử lý góp ý nội bộ.</p>
+    <form id="loginForm">
+      <input type="password" id="adminPass" autocomplete="current-password" placeholder="Nhập mật khẩu quản lý" required>
+      <button class="primary" type="submit" id="loginButton">Đăng nhập</button>
+    </form>
+    <div id="setupHint" class="subtle" style="display:none;margin-top:10px">Lần đầu sử dụng? Hãy tạo mật khẩu quản lý bên dưới.</div>
+    <div id="setupBox" style="display:none;text-align:left;margin-top:14px">
+      <label for="newPass" style="font-weight:750;font-size:13px">Tạo mật khẩu quản lý mới</label>
+      <input type="password" id="newPass" minlength="6" autocomplete="new-password" placeholder="Tối thiểu 6 ký tự">
+      <label for="confirmPass" style="font-weight:750;font-size:13px">Nhập lại mật khẩu</label>
+      <input type="password" id="confirmPass" minlength="6" autocomplete="new-password" placeholder="Nhập lại mật khẩu">
+      <button class="primary" type="button" onclick="setupPassword()" style="margin-top:4px">🔑 Tạo mật khẩu</button>
+    </div>
+    <div class="security-note">Lưu ý: bản HTML này lưu dữ liệu trong trình duyệt đang sử dụng. Mật khẩu chỉ giúp hạn chế truy cập thông thường, không phải bảo mật cấp máy chủ. Muốn nhiều người gửi và quản lý chung trên nhiều thiết bị, cần kết nối cơ sở dữ liệu/server.</div>
+  </div>
+
+  <div id="dashboard" style="display:none">
+    <div class="admin-head">
+      <div><h2>📊 Bảng quản lý góp ý</h2><div class="subtle">Theo dõi phản hồi và tiến độ xử lý</div></div>
+      <div class="actions"><button class="secondary" onclick="exportCSV()">⬇ Xuất Excel/CSV</button><button class="secondary" onclick="changePassword()">🔑 Đổi mật khẩu</button><button class="secondary" onclick="logout()">Đăng xuất</button></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="label">Tổng góp ý (theo bộ lọc)</div><div class="num" id="statTotal">0</div></div>
+      <div class="stat"><div class="label">Đã tiếp nhận</div><div class="num" id="statReceived">0</div></div>
+      <div class="stat"><div class="label">Đã giải quyết</div><div class="num" id="statDone">0</div></div>
+      <div class="stat"><div class="label">Ý kiến tích cực</div><div class="num" id="statPositive">0</div></div>
+    </div>
+    <div class="yearsummary" style="margin:0 0 18px">
+      <h3>🗂️ Quản lý lĩnh vực góp ý</h3>
+      <div class="subtle" style="margin-bottom:10px">Thêm lĩnh vực mới hoặc xóa lĩnh vực không còn sử dụng. Lĩnh vực đã có trong góp ý cũ vẫn được giữ nguyên trong dữ liệu.</div>
+      <div class="actions" style="align-items:center">
+        <input id="newAreaInput" type="text" maxlength="100" placeholder="Nhập tên lĩnh vực mới..." style="flex:1;min-width:180px;border:1.5px solid #d5e9f3;border-radius:12px;padding:11px 12px;background:#fff">
+        <button class="primary" type="button" onclick="addArea()">➕ Thêm lĩnh vực</button>
+      </div>
+      <div id="areaManagerList" class="actions" style="margin-top:12px"></div>
+    </div>
+    <div class="filters">
+      <div><label for="filterYear">Năm</label><select id="filterYear" onchange="renderDashboard()"></select></div>
+      <div><label for="filterMonth">Tháng</label><select id="filterMonth" onchange="renderDashboard()"><option value="all">Tất cả tháng</option></select></div>
+      <div><label for="filterStatus">Trạng thái xử lý</label><select id="filterStatus" onchange="renderDashboard()"><option value="all">Tất cả trạng thái</option><option value="pending">Chưa giải quyết</option><option value="received">Đã tiếp nhận</option><option value="done">Đã giải quyết</option></select></div>
+      <div><label for="filterSentiment">Đánh giá ý kiến</label><select id="filterSentiment" onchange="renderDashboard()"><option value="all">Tất cả ý kiến</option><option value="positive">Tích cực</option><option value="neutral">Trung lập</option><option value="negative">Tiêu cực</option><option value="unrated">Chưa đánh giá</option></select></div>
+      <div class="wide"><label for="filterArea">Lĩnh vực</label><select id="filterArea" onchange="renderDashboard()"><option value="all">Tất cả lĩnh vực</option></select></div>
+      <div class="wide"><label for="searchText">Tìm trong nội dung</label><input id="searchText" type="search" placeholder="Nhập từ khóa..." oninput="renderDashboard()"></div>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Ngày gửi</th><th>Lĩnh vực</th><th>Nội dung góp ý / Đề xuất</th><th>Trạng thái</th><th>Đánh giá</th><th>Thao tác</th></tr></thead>
+        <tbody id="feedbackRows"></tbody>
+      </table>
+      <div class="empty" id="emptyState" style="display:none">🌤️ Chưa có góp ý nào phù hợp với bộ lọc.</div>
+    </div>
+    <div class="yearsummary">
+      <h3>📅 Thống kê theo tháng — <span id="summaryYear"></span></h3>
+      <div class="monthgrid" id="monthGrid"></div>
+    </div>
+  </div>
+</section>
+<footer class="footer">Được tạo để lắng nghe và cùng nhau tốt hơn 💙</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const DATA_KEY='homThuGopY_v1', PASS_KEY='homThuGopY_adminPass_v1', AREAS_KEY='homThuGopY_areas_v1';
+const DEFAULT_AREAS=['Môi trường & văn hóa làm việc','Quản lý & lãnh đạo','Chính sách & chế độ','Quy trình & công cụ làm việc','Phối hợp giữa các phòng ban','Cơ sở vật chất','Ghi nhận & khen thưởng','Ý tưởng cải tiến','Khác'];
+let loggedIn=false;
+const $=id=>document.getElementById(id);
+function getData(){try{return JSON.parse(localStorage.getItem(DATA_KEY)||'[]')}catch(e){return []}}
+function getAreas(){try{const saved=JSON.parse(localStorage.getItem(AREAS_KEY));return Array.isArray(saved)&&saved.length?saved:DEFAULT_AREAS.slice()}catch(e){return DEFAULT_AREAS.slice()}}
+function saveAreas(areas){localStorage.setItem(AREAS_KEY,JSON.stringify(areas))}
+function refreshFeedbackAreaOptions(){const select=$('area'),current=select.value,areas=getAreas();select.innerHTML='<option value="">— Chọn lĩnh vực —</option>'+areas.map(a=>`<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join('');if(areas.includes(current))select.value=current}
+function addArea(){const input=$('newAreaInput'),name=input.value.trim();if(!name){showToast('Bạn hãy nhập tên lĩnh vực.');return}const areas=getAreas();if(areas.some(a=>a.toLocaleLowerCase('vi')===name.toLocaleLowerCase('vi'))){showToast('Lĩnh vực này đã tồn tại.');return}areas.push(name);saveAreas(areas);input.value='';refreshAreaManagement();initDashboard();refreshFeedbackAreaOptions();showToast('Đã thêm lĩnh vực mới.')}
+function deleteArea(name){if(!confirm('Xóa lĩnh vực “'+name+'” khỏi danh sách chọn? Các góp ý đã gửi thuộc lĩnh vực này vẫn được giữ nguyên.'))return;const areas=getAreas().filter(a=>a!==name);saveAreas(areas);refreshAreaManagement();initDashboard();refreshFeedbackAreaOptions();showToast('Đã xóa lĩnh vực khỏi danh sách.')}
+function refreshAreaManagement(){const list=$('areaManagerList');if(!list)return;const areas=getAreas();list.innerHTML=areas.map(a=>`<span style="display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #dceef6;border-radius:999px;padding:7px 8px 7px 12px;font-size:12px;font-weight:700;color:#426e83">${escapeHtml(a)}<button type="button" aria-label="Xóa ${escapeHtml(a)}" title="Xóa lĩnh vực" onclick="deleteArea(${JSON.stringify(a).replace(/</g,'\\u003c')})" style="background:#fff0f2;color:#b14b62;border-radius:50%;width:23px;height:23px;font-weight:900">×</button></span>`).join('')||'<span class="subtle">Chưa có lĩnh vực nào.</span>'}
+function saveData(data){localStorage.setItem(DATA_KEY,JSON.stringify(data))}
+function showToast(msg){const t=$('toast');t.textContent=msg;t.style.display='block';clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.style.display='none',2800)}
+function showTab(tab){const feedback=tab==='feedback';$('feedbackSection').style.display=feedback?'block':'none';$('adminSection').style.display=feedback?'none':'block';$('tabFeedback').classList.toggle('active',feedback);$('tabAdmin').classList.toggle('active',!feedback);if(!feedback)prepareLogin()}
+function resetFeedback(){$('feedbackForm').reset();$('feedbackFormWrap').style.display='block';$('successBox').style.display='none'}
+$('feedbackForm').addEventListener('submit',e=>{e.preventDefault();const item={id:Date.now().toString(36)+Math.random().toString(36).slice(2,7),date:new Date().toISOString(),area:$('area').value,content:$('content').value.trim(),solution:$('solution').value.trim(),status:'pending',sentiment:'unrated',resolutionNote:''};if(!item.area||!item.content){showToast('Bạn vui lòng điền các trường bắt buộc nhé.');return}const data=getData();data.unshift(item);saveData(data);$('feedbackFormWrap').style.display='none';$('successBox').style.display='block';});
+function resetFeedback(){ $('feedbackForm').reset(); $('feedbackFormWrap').style.display='block'; $('successBox').style.display='none'; }
+function prepareLogin(){const hasPass=!!localStorage.getItem(PASS_KEY);$('loginView').style.display=loggedIn?'none':'block';$('dashboard').style.display=loggedIn?'block':'none';$('setupBox').style.display=hasPass?'none':'block';$('setupHint').style.display=hasPass?'none':'block';$('loginTitle').textContent=hasPass?'Khu vực quản lý':'Thiết lập quản lý lần đầu';$('loginDesc').textContent=hasPass?'Đăng nhập để xem và xử lý góp ý nội bộ.':'Tạo mật khẩu để bảo vệ khu vực quản lý.';$('loginButton').style.display=hasPass?'block':'none';$('adminPass').style.display=hasPass?'block':'none';if(loggedIn)initDashboard()}
+function setupPassword(){const p=$('newPass').value,c=$('confirmPass').value;if(p.length<6){showToast('Mật khẩu cần có ít nhất 6 ký tự.');return}if(p!==c){showToast('Mật khẩu nhập lại chưa khớp.');return}localStorage.setItem(PASS_KEY,p);$('newPass').value='';$('confirmPass').value='';showToast('Đã tạo mật khẩu quản lý. Vui lòng đăng nhập.');prepareLogin()}
+$('loginForm').addEventListener('submit',e=>{e.preventDefault();if($('adminPass').value===localStorage.getItem(PASS_KEY)){loggedIn=true;$('adminPass').value='';prepareLogin()}else showToast('Mật khẩu chưa đúng, bạn thử lại nhé.')});
+function logout(){loggedIn=false;prepareLogin();showToast('Đã đăng xuất khỏi khu vực quản lý.')}
+function changePassword(){const old=prompt('Nhập mật khẩu hiện tại:');if(old===null)return;if(old!==localStorage.getItem(PASS_KEY)){showToast('Mật khẩu hiện tại không đúng.');return}const p=prompt('Nhập mật khẩu mới (ít nhất 6 ký tự):');if(p===null)return;if(p.length<6){showToast('Mật khẩu cần có ít nhất 6 ký tự.');return}const c=prompt('Nhập lại mật khẩu mới:');if(c!==p){showToast('Mật khẩu nhập lại chưa khớp.');return}localStorage.setItem(PASS_KEY,p);showToast('Đổi mật khẩu thành công.')}
+function initDashboard(){const data=getData();refreshAreaManagement();const years=[...new Set([new Date().getFullYear(),...data.map(x=>new Date(x.date).getFullYear())])].sort((a,b)=>b-a);const old=$('filterYear').value;$('filterYear').innerHTML=years.map(y=>`<option value="${y}">${y}</option>`).join('');if(years.includes(Number(old)))$('filterYear').value=old;const oldMonth=$('filterMonth').value;$('filterMonth').innerHTML='<option value="all">Tất cả tháng</option>'+Array.from({length:12},(_,i)=>`<option value="${i+1}">Tháng ${i+1}</option>`).join('');$('filterMonth').value=oldMonth||'all';const areas=[...new Set([...getAreas(),...data.map(x=>x.area)])];const oldArea=$('filterArea').value;$('filterArea').innerHTML='<option value="all">Tất cả lĩnh vực</option>'+areas.map(a=>`<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join('');if(areas.includes(oldArea))$('filterArea').value=oldArea;renderDashboard()}
+function filteredData(){let d=getData();const y=Number($('filterYear').value),m=$('filterMonth').value,s=$('filterStatus').value,v=$('filterSentiment').value,a=$('filterArea').value,q=$('searchText').value.trim().toLocaleLowerCase('vi');return d.filter(x=>{const dt=new Date(x.date);if(dt.getFullYear()!==y)return false;if(m!=='all'&&dt.getMonth()+1!==Number(m))return false;if(s==='pending'&&x.status==='done')return false;if(s==='received'&&x.status!=='received')return false;if(s==='done'&&x.status!=='done')return false;if(v!=='all'&&x.sentiment!==v)return false;if(a!=='all'&&x.area!==a)return false;if(q&&!(x.content+' '+x.solution+' '+x.area+' '+(x.resolutionNote||'')).toLocaleLowerCase('vi').includes(q))return false;return true})}
+function renderDashboard(){if(!loggedIn)return;const d=filteredData();$('statTotal').textContent=d.length;$('statReceived').textContent=d.filter(x=>x.status==='received').length;$('statDone').textContent=d.filter(x=>x.status==='done').length;$('statPositive').textContent=d.filter(x=>x.sentiment==='positive').length;const tbody=$('feedbackRows');tbody.innerHTML='';$('emptyState').style.display=d.length?'none':'block';d.forEach(x=>{const tr=document.createElement('tr');const statusText=x.status==='done'?'Đã giải quyết':x.status==='received'?'Đã tiếp nhận':'Chưa giải quyết';const statusClass=x.status==='done'?'done':x.status==='received'?'received':'';const sentimentText={positive:'Tích cực',neutral:'Trung lập',negative:'Tiêu cực',unrated:'Chưa đánh giá'}[x.sentiment]||'Chưa đánh giá';const sentClass={positive:'positive',neutral:'neutral',negative:'negative',unrated:''}[x.sentiment]||'';tr.innerHTML=`<td>${formatDate(x.date)}</td><td>${escapeHtml(x.area)}</td><td class="content-cell"><strong>Góp ý:</strong><br>${escapeHtml(x.content)}<br><br><strong>Đề xuất:</strong><br>${escapeHtml(x.solution||'—')}${x.resolutionNote?'<br><br><strong>Ghi chú xử lý:</strong><br>'+escapeHtml(x.resolutionNote):''}</td><td><span class="pill ${statusClass}">${statusText}</span><div style="margin-top:7px"><select aria-label="Cập nhật trạng thái" onchange="updateItem('${x.id}','status',this.value)" style="max-width:145px;padding:6px;border:1px solid #d6eaf4;border-radius:8px;font-size:11px"><option value="pending" ${x.status==='pending'?'selected':''}>Chưa giải quyết</option><option value="received" ${x.status==='received'?'selected':''}>Đã tiếp nhận</option><option value="done" ${x.status==='done'?'selected':''}>Đã giải quyết</option></select></div></td><td><span class="pill ${sentClass}">${sentimentText}</span><div style="margin-top:7px"><select aria-label="Đánh giá ý kiến" onchange="updateItem('${x.id}','sentiment',this.value)" style="max-width:130px;padding:6px;border:1px solid #d6eaf4;border-radius:8px;font-size:11px"><option value="unrated" ${x.sentiment==='unrated'?'selected':''}>Chưa đánh giá</option><option value="positive" ${x.sentiment==='positive'?'selected':''}>Tích cực</option><option value="neutral" ${x.sentiment==='neutral'?'selected':''}>Trung lập</option><option value="negative" ${x.sentiment==='negative'?'selected':''}>Tiêu cực</option></select></div></td><td><div class="table-actions"><button class="smallbtn" onclick="addNote('${x.id}')">📝 Ghi chú</button><button class="smallbtn red" onclick="deleteItem('${x.id}')">Xóa</button></div></td>`;tbody.appendChild(tr)});renderMonthly()}
+function renderMonthly(){const y=Number($('filterYear').value);$('summaryYear').textContent=y;const all=getData().filter(x=>new Date(x.date).getFullYear()===y);$('monthGrid').innerHTML=Array.from({length:12},(_,i)=>{const a=all.filter(x=>new Date(x.date).getMonth()===i),done=a.filter(x=>x.status==='done').length;return `<div class="monthbox"><strong>Tháng ${i+1}</strong><span>${a.length} góp ý</span><small>${done} đã giải quyết</small></div>`}).join('')}
+function updateItem(id,key,value){const d=getData(),x=d.find(a=>a.id===id);if(!x)return;x[key]=value;x.updatedAt=new Date().toISOString();saveData(d);renderDashboard();showToast('Đã cập nhật thông tin góp ý.')}
+function addNote(id){const d=getData(),x=d.find(a=>a.id===id);if(!x)return;const n=prompt('Ghi chú xử lý (nội bộ):',x.resolutionNote||'');if(n===null)return;x.resolutionNote=n.trim();saveData(d);renderDashboard();showToast('Đã lưu ghi chú xử lý.')}
+function deleteItem(id){if(!confirm('Bạn có chắc muốn xóa góp ý này? Thao tác này không thể hoàn tác.'))return;saveData(getData().filter(x=>x.id!==id));renderDashboard();showToast('Đã xóa góp ý.')}
+function formatDate(s){const d=new Date(s);return d.toLocaleDateString('vi-VN')+'<br><span style="color:#8aa2ae">'+d.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'})+'</span>'}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function exportCSV(){const d=filteredData();const rows=[['Ngày gửi','Lĩnh vực','Nội dung góp ý','Đề xuất giải pháp','Trạng thái','Đánh giá','Ghi chú xử lý'],...d.map(x=>[new Date(x.date).toLocaleString('vi-VN'),x.area,x.content,x.solution,x.status==='done'?'Đã giải quyết':x.status==='received'?'Đã tiếp nhận':'Chưa giải quyết',{positive:'Tích cực',neutral:'Trung lập',negative:'Tiêu cực',unrated:'Chưa đánh giá'}[x.sentiment]||'Chưa đánh giá',x.resolutionNote||''])];const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Thong_ke_gop_y_'+$('filterYear').value+'.csv';a.click();URL.revokeObjectURL(url);showToast('Đã xuất file CSV theo bộ lọc hiện tại.')}
+if(!localStorage.getItem(AREAS_KEY))saveAreas(DEFAULT_AREAS.slice());refreshFeedbackAreaOptions();
+prepareLogin();
+</script>
+</body>
+</html>
