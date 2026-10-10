@@ -16,8 +16,8 @@
 <div class="wrap">
 <header class="hero">
   <div class="bubble">💌</div>
-  <h1>Hòm thư góp ý</h1>
-  <p>Cùng lắng nghe, cùng cải thiện — mỗi ý kiến đều góp phần làm công ty tốt hơn 🌱</p>
+  <h1 id="heroTitle">Hòm thư góp ý</h1>
+  <p id="heroSub">Cùng lắng nghe, cùng cải thiện — mỗi ý kiến đều góp phần làm công ty tốt hơn 🌱</p>
 </header>
 <nav class="tabs" aria-label="Chọn chức năng">
   <button class="tab active" id="tabFeedback" onclick="showTab('feedback')">💬 Gửi góp ý</button>
@@ -27,8 +27,8 @@
 <section id="feedbackSection" class="panel form-panel">
   <div id="feedbackFormWrap">
     <div class="intro">
-      <h2>Đây là góp ý ẩn danh, các bạn cứ thẳng thắn nhé.</h2>
-      <p>Chia sẻ chân thành để cùng xây dựng môi trường làm việc tốt hơn nha! 💙</p>
+      <h2 id="introTitle">Đây là góp ý ẩn danh, các bạn cứ thẳng thắn nhé.</h2>
+      <p id="introSub">Chia sẻ chân thành để cùng xây dựng môi trường làm việc tốt hơn nha! 💙</p>
     </div>
     <form id="feedbackForm">
       <div id="feedbackItems"></div>
@@ -67,6 +67,15 @@
       <div class="stat"><div class="label">Đã tiếp nhận</div><div class="num" id="statReceived">0</div></div>
       <div class="stat"><div class="label">Đã giải quyết</div><div class="num" id="statDone">0</div></div>
       <div class="stat"><div class="label">Ý kiến tích cực</div><div class="num" id="statPositive">0</div></div>
+    </div>
+    <div class="yearsummary" style="margin:0 0 18px">
+      <h3>✏️ Tiêu đề hiển thị</h3>
+      <div class="subtle" style="margin-bottom:10px">Thay đổi các dòng chữ hiển thị ở trang gửi góp ý. Để trống một ô để dùng nội dung mặc định.</div>
+      <div class="field" style="margin:10px 0"><label for="cfgTitle">Tiêu đề chính</label><input id="cfgTitle" type="text" maxlength="100"></div>
+      <div class="field" style="margin:10px 0"><label for="cfgSub">Dòng mô tả dưới tiêu đề</label><input id="cfgSub" type="text" maxlength="200"></div>
+      <div class="field" style="margin:10px 0"><label for="cfgIntroTitle">Lời nhắn đầu biểu mẫu</label><input id="cfgIntroTitle" type="text" maxlength="150"></div>
+      <div class="field" style="margin:10px 0"><label for="cfgIntroSub">Dòng nhỏ dưới lời nhắn</label><input id="cfgIntroSub" type="text" maxlength="200"></div>
+      <div class="actions"><button class="primary" type="button" onclick="saveTitles()">💾 Lưu tiêu đề</button><button class="secondary" type="button" onclick="resetTitles()">↩ Khôi phục mặc định</button></div>
     </div>
     <div class="yearsummary" style="margin:0 0 18px">
       <h3>🗂️ Quản lý lĩnh vực góp ý</h3>
@@ -147,9 +156,17 @@ function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;',
 function exportCSV(){const d=filteredData();const rows=[['Ngày gửi','Lĩnh vực','Nội dung góp ý','Đề xuất giải pháp','Trạng thái','Đánh giá','Ghi chú xử lý'],...d.map(x=>[new Date(x.date).toLocaleString('vi-VN'),x.area,x.content,x.solution,x.status==='done'?'Đã giải quyết':x.status==='received'?'Đã tiếp nhận':'Chưa giải quyết',{positive:'Tích cực',neutral:'Trung lập',negative:'Tiêu cực',unrated:'Chưa đánh giá'}[x.sentiment]||'Chưa đánh giá',x.resolutionNote||''])];const csv='\uFEFF'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Thong_ke_gop_y_'+$('filterYear').value+'.csv';a.click();URL.revokeObjectURL(url);showToast('Đã xuất file CSV theo bộ lọc hiện tại.')}
 addFeedbackItem();
 onSnapshot(doc(db,'config','areas'),s=>{AREAS=(s.exists()&&Array.isArray(s.data().list))?s.data().list:[];refreshFeedbackAreaOptions();if(loggedIn)initDashboard()},()=>{});
+const DEFAULT_TITLES={title:'Hòm thư góp ý',sub:'Cùng lắng nghe, cùng cải thiện — mỗi ý kiến đều góp phần làm công ty tốt hơn 🌱',introTitle:'Đây là góp ý ẩn danh, các bạn cứ thẳng thắn nhé.',introSub:'Chia sẻ chân thành để cùng xây dựng môi trường làm việc tốt hơn nha! 💙'};
+let TITLES={};
+function getTitles(){return {...DEFAULT_TITLES,...Object.fromEntries(Object.entries(TITLES).filter(([k,v])=>typeof v==='string'&&v.trim()))}}
+function applyTitles(){const t=getTitles();$('heroTitle').textContent=t.title;$('heroSub').textContent=t.sub;$('introTitle').textContent=t.introTitle;$('introSub').textContent=t.introSub;document.title=t.title}
+function fillTitleInputs(){const t=getTitles();$('cfgTitle').value=t.title;$('cfgSub').value=t.sub;$('cfgIntroTitle').value=t.introTitle;$('cfgIntroSub').value=t.introSub}
+async function saveTitles(){const v={title:$('cfgTitle').value.trim(),sub:$('cfgSub').value.trim(),introTitle:$('cfgIntroTitle').value.trim(),introSub:$('cfgIntroSub').value.trim()};try{await setDoc(doc(db,'config','titles'),v);showToast('Đã lưu tiêu đề hiển thị.')}catch(e){showToast('Không lưu được tiêu đề, thử lại nhé.')}}
+async function resetTitles(){if(!confirm('Khôi phục toàn bộ tiêu đề về nội dung mặc định?'))return;try{await setDoc(doc(db,'config','titles'),{});showToast('Đã khôi phục tiêu đề mặc định.')}catch(e){showToast('Không khôi phục được, thử lại nhé.')}}
+onSnapshot(doc(db,'config','titles'),s=>{TITLES=s.exists()?s.data():{};applyTitles();fillTitleInputs()},()=>{});
 function startListen(){if(unsubFb)return;unsubFb=onSnapshot(query(collection(db,'feedbacks'),orderBy('date','desc')),s=>{CACHE=s.docs.map(d=>({id:d.id,...d.data()}));if(loggedIn)initDashboard()},e=>showToast('Không tải được góp ý: '+e.code))}
 onAuthStateChanged(auth,u=>{loggedIn=!!u;if(u)startListen();else{if(unsubFb)unsubFb();unsubFb=null;CACHE=[]}prepareLogin()});
-Object.assign(window,{addFeedbackItem,removeFeedbackItem,showTab,resetFeedback,addArea,deleteArea,exportCSV,changePassword,logout,renderDashboard,updateItem,addNote,deleteItem});
+Object.assign(window,{saveTitles,resetTitles,addFeedbackItem,removeFeedbackItem,showTab,resetFeedback,addArea,deleteArea,exportCSV,changePassword,logout,renderDashboard,updateItem,addNote,deleteItem});
 prepareLogin();
 </script>
 </body>
